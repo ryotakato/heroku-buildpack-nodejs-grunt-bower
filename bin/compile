@@ -173,6 +173,16 @@ mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
 echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $build_dir/.profile.d/ruby.sh
 
+
+if [ -f $build_dir/bower.json ]; then
+  npm install bower
+  echo "-----> Found bower.json, running bower install"
+  $build_dir/node_modules/.bin/bower install
+else
+  echo "-----> No Bower.json found"
+fi
+
+
 # Check and run Grunt
 (
   if $is_gruntfile_present; then
