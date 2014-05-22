@@ -176,7 +176,9 @@ echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $build_dir/.profile.d
 
 if [ -f $build_dir/bower.json ]; then
   # npm install bower@^1.x
-  echo "-----> Found bower.json, running bower install"
+  echo "-----> Found bower.json, cleaning bower chache"
+  $build_dir/node_modules/.bin/bower cache clean
+  echo "-----> Running bower install"
   $build_dir/node_modules/.bin/bower install
 else
   echo "-----> No Bower.json found"
