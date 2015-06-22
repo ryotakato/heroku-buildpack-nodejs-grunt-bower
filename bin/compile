@@ -186,6 +186,8 @@ fi
 
 echo "------> ls app"
 echo `ls $build_dir/app`
+echo "------> ls build_dir"
+echo `ls $build_dir`
 
 # Check and run Grunt
 (
