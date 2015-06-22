@@ -184,6 +184,8 @@ else
   echo "-----> No Bower.json found"
 fi
 
+echo "------> ls app"
+echo `ls $build_dir/app`
 
 # Check and run Grunt
 (
