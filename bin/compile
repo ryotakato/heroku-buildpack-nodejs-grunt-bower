@@ -179,15 +179,10 @@ if [ -f $build_dir/bower.json ]; then
   echo "-----> Found bower.json, cleaning bower chache"
   $build_dir/node_modules/.bin/bower cache clean
   echo "-----> Running bower install"
-  $build_dir/node_modules/.bin/bower install --verbose
+  $build_dir/node_modules/.bin/bower install
 else
   echo "-----> No Bower.json found"
 fi
-
-echo "------> ls app"
-echo `ls -la $build_dir/app`
-echo "------> lla Y"
-echo `ls -la $build_dir/app/Y`
 
 # Check and run Grunt
 (
