@@ -29,20 +29,19 @@ Here's an overview of what this buildpack does:
 - Always runs `npm prune` after restoring cached modules to ensure cleanup of unused dependencies.
 - Runs `grunt` if a Gruntfile (`Gruntfile.js`, `Gruntfile.coffee`or `grunt.js`) is found.
 - Doesn't install grunt-cli every time.
-- Installs `compass`, caching it for future use.
 
-For more technical details, see the [heavily-commented compile script](https://github.com/stephanmelzer/heroku-buildpack-nodejs-grunt-compass/blob/master/bin/compile).
+For more technical details, see the [heavily-commented compile script](https://github.com/ryotakato/heroku-buildpack-nodejs-grunt-bower/blob/master/bin/compile).
 
 Usage
 -----
 
 Create a new app with this buildpack:
 
-    heroku create myapp --buildpack heroku config:add BUILDPACK_URL=https://github.com/stephanmelzer/heroku-buildpack-nodejs-grunt-compass.git
+    heroku create myapp --buildpack heroku config:add BUILDPACK_URL=https://github.com/ryotakato/heroku-buildpack-nodejs-grunt-bower.git
 
 Or add this buildpack to your current app:
 
-    heroku config:add BUILDPACK_URL=https://github.com/stephanmelzer/heroku-buildpack-nodejs-grunt-compass.git
+    heroku config:add BUILDPACK_URL=https://github.com/ryotakato/heroku-buildpack-nodejs-grunt-bower.git
 
 Set the `NODE_ENV` environment variable (e.g. `development` or `production`):
 
@@ -83,11 +82,6 @@ Push to heroku
            npm WARN package.json mealgen@0.0.0 No repository field.
     -----> Caching node_modules directory for future builds
     -----> Cleaning up node-gyp and npm artifacts
-    -----> Installing Compass
-    -----> Restoring ruby gems directory from cache
-    Updating installed gems
-    Nothing to update
-    -----> Caching ruby gems directory for future builds
     -----> Building runtime environment
     -----> Running grunt heroku: task
 
@@ -111,4 +105,3 @@ For more information about using Node.js and buildpacks on Heroku, see these Dev
 - [Buildpacks](https://devcenter.heroku.com/articles/buildpacks)
 - [Buildpack API](https://devcenter.heroku.com/articles/buildpack-api)
 - [Grunt: a task-based command line build tool for JavaScript projects](http://gruntjs.com/)
-- [Compass: SCSS with batteries](http://compass-style.org/)
